@@ -1,7 +1,6 @@
 defmodule Mix.Tasks.Watch.Notifier do
 
   use     GenServer
-  require Logger
 
   def start_link(args) do
     GenServer.start_link(__MODULE__, args)
@@ -43,9 +42,8 @@ defmodule Mix.Tasks.Watch.Notifier do
   end
  
   defp run_tasks(tasks) do
-    Logger.info "watch is running: #{Enum.join(tasks, ", ")}"
+    Mix.shell.info "watch is running: #{Enum.join(tasks, ", ")}"
     for task <- tasks do
-      Logger.info task
       #      Mix.Task.reenable(task)
       Mix.Task.clear
       change_env(task) 
