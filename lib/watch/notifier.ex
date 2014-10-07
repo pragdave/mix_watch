@@ -46,8 +46,9 @@ defmodule Mix.Tasks.Watch.Notifier do
     Logger.info "watch is running: #{Enum.join(tasks, ", ")}"
     for task <- tasks do
       Logger.info task
-      Mix.Task.reenable(task)
-      change_env(task)
+      #      Mix.Task.reenable(task)
+      Mix.Task.clear
+      change_env(task) 
       Mix.Task.run(task, (if task == "compile", do: ["--force"], else: []))
     end
   end

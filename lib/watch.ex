@@ -15,7 +15,7 @@ defmodule Mix.Tasks.Watch do
 
   # The default is to monitor lib/, test/ and mix.exs, running tests on change
   defp parse([]) do
-    { ~W{mix.exs lib/**/*exs?  test/**/*exs?}, ~W{compile test} }
+    { ~W{mix.exs lib/**/*exs?  test/**/*exs?}, ~W{test} }
   end
   defp parse(args) do
     { path_list, rest } = extract_path_list(args)

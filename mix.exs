@@ -4,7 +4,7 @@ defmodule Watch.Mixfile do
   def project do
     [app: :watch,
      version: "0.0.1",
-     elixir:  ">= 1.0",
+     elixir:  ">= 1.0.0",
      deps:   []]
   end
 
@@ -13,3 +13,4 @@ defmodule Watch.Mixfile do
   end
 
 end
+ 
